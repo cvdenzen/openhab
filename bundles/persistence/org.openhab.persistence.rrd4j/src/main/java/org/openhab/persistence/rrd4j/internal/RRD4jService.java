@@ -223,6 +223,7 @@ public class RRD4jService implements QueryablePersistenceService {
                     if (!Double.isNaN(value)) {
                         RRD4jItem rrd4jItem = new RRD4jItem(itemName, mapToState(value, itemName), new Date(ts * 1000));
                         items.add(rrd4jItem);
+                        logger.info("added item to query, item=" + rrd4jItem); // Carl van Denzen 20160917
                     }
                     ts += step;
                 }
